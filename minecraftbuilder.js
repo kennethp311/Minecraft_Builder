@@ -22,27 +22,18 @@ class Cube extends Shape {
     }
 }
 
-class Cube_Outline extends Shape {
+class Floor extends Shape{
     constructor() {
-        super("position", "color");
-        //  TODO (Requirement 5).
+        super("position","normal");
 
-    }
-}
-
-class Cube_Single_Strip extends Shape {
-    constructor() {
-        super("position", "normal");
-        // TODO (Requirement 6)
+        this.arrays.position = Vector3.cast([1, 0, 1], [1, 0, -1], [-1, 0, -1], [-1, 0, 1]);
+        this.arrays.normal = Vector3.cast([0,1,0],[0,1,0],[0,1,0],[0,1,0]);
+        this.indices.push(3,2,1,3,1,0);
     }
 }
 
 
-class Base_Scene extends Scene {
-    /**
-     *  **Base_scene** is a Scene that can be added to any display canvas.
-     *  Setup the shapes, materials, camera, and lighting here.
-     */
+export class MinecraftBuilder extends Scene {
     constructor() {
         // constructor(): Scenes begin by populating initial values like the Shapes and Materials they'll need.
         super();
@@ -50,7 +41,7 @@ class Base_Scene extends Scene {
         // At the beginning of our program, load one of each of these shape definitions onto the GPU.
         this.shapes = {
             'cube': new Cube(),
-            'outline': new Cube_Outline(),
+            'floor': new Floor(),
         };
 
         // *** Materials
@@ -62,15 +53,18 @@ class Base_Scene extends Scene {
         this.white = new Material(new defs.Basic_Shader());
     }
 
-    display(context, program_state) {
-        // display():  Called once per frame of animation. Here, the base class's display only does
-        // some initial setup.
+    make_control_panel() {
+        // Draw the scene's buttons, setup their actions and keyboard shortcuts, and monitor live measurements.
+        this.key_triggered_button("Delete Base", ["c"], this.set_colors);
+        this.key_triggered_button("Turn House in to Sand", ["s"], this.set_colors);
+    }
 
-        // Setup -- This part sets up the scene's overall camera matrix, projection matrix, and lights:
+
+    display(context, program_state) {
         if (!context.scratchpad.controls) {
             this.children.push(context.scratchpad.controls = new defs.Movement_Controls());
             // Define the global camera and projection matrices, which are stored in program_state.
-            program_state.set_camera(Mat4.translation(5, -10, -30));
+            program_state.set_camera(Mat4.translation(0, -10, -50));
         }
         program_state.projection_transform = Mat4.perspective(
             Math.PI / 4, context.width / context.height, 1, 100);
@@ -78,49 +72,17 @@ class Base_Scene extends Scene {
         // *** Lights: *** Values of vector or point lights.
         const light_position = vec4(0, 5, 5, 1);
         program_state.lights = [new Light(light_position, color(1, 1, 1, 1), 1000)];
-    }
-}
 
-export class MinecraftBuilder extends Base_Scene {
-    /**
-     * This Scene object can be added to any display canvas.
-     * We isolate that code so it can be experimented with on its own.
-     * This gives you a very small code sandbox for editing a simple scene, and for
-     * experimenting with matrix transformations.
-     */
-    set_colors() {
-        // TODO:  Create a class member variable to store your cube's colors.
-        // Hint:  You might need to create a member variable at somewhere to store the colors, using `this`.
-        // Hint2: You can consider add a constructor for class Assignment2, or add member variables in Base_Scene's constructor.
-    }
-
-    make_control_panel() {
-        // Draw the scene's buttons, setup their actions and keyboard shortcuts, and monitor live measurements.
-        this.key_triggered_button("Change Colors", ["c"], this.set_colors);
-        // Add a button for controlling the scene.
-        this.key_triggered_button("Outline", ["o"], () => {
-            // TODO:  Requirement 5b:  Set a flag here that will toggle your outline on and off
-        });
-        this.key_triggered_button("Sit still", ["m"], () => {
-            // TODO:  Requirement 3d:  Set a flag here that will toggle your swaying motion on and off.
-        });
-    }
-
-    draw_box(context, program_state, model_transform) {
-        // TODO:  Helper function for requirement 3 (see hint).
-        //        This should make changes to the model_transform matrix, draw the next box, and return the newest model_transform.
-        // Hint:  You can add more parameters for this function, like the desired color, index of the box, etc.
-
-        return model_transform;
-    }
-
-    display(context, program_state) {
-        super.display(context, program_state);
         const blue = hex_color("#1a9ffa");
         let model_transform = Mat4.identity();
 
         // Example for drawing a cube, you can remove this line if needed
         this.shapes.cube.draw(context, program_state, model_transform, this.materials.plastic.override({color:blue}));
         // TODO:  Draw your entire scene here.  Use this.draw_box( graphics_state, model_transform ) to call your helper.
+
+
+        let floor_transformation = Mat4.identity();
+        floor_transformation = floor_transformation.times(Mat4.scale(25,0,25));
+        this.shapes.floor.draw(context, program_state,floor_transformation, this.materials.plastic);
     }
 }
