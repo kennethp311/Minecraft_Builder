@@ -1,53 +1,48 @@
 import {defs, tiny} from './examples/common.js';
 
 const {
-    Vector, Vector3, vec, vec3, vec4, color, hex_color, Matrix, Mat4, Light, Shape, Material, Scene,
+    Vector, Vector3, vec, vec3, vec4, color, hex_color, Matrix, Mat4, Light, Shape, Material, Scene, Texture,
 } = tiny;
 
-class Cube extends Shape {
-    constructor() {
-        super("position", "normal",);
-        // Loop 3 times (for each axis), and inside loop twice (for opposing cube sides):
-        this.arrays.position = Vector3.cast(
-            [-1, -1, -1], [1, -1, -1], [-1, -1, 1], [1, -1, 1], [1, 1, -1], [-1, 1, -1], [1, 1, 1], [-1, 1, 1],
-            [-1, -1, -1], [-1, -1, 1], [-1, 1, -1], [-1, 1, 1], [1, -1, 1], [1, -1, -1], [1, 1, 1], [1, 1, -1],
-            [-1, -1, 1], [1, -1, 1], [-1, 1, 1], [1, 1, 1], [1, -1, -1], [-1, -1, -1], [1, 1, -1], [-1, 1, -1]);
-        this.arrays.normal = Vector3.cast(
-            [0, -1, 0], [0, -1, 0], [0, -1, 0], [0, -1, 0], [0, 1, 0], [0, 1, 0], [0, 1, 0], [0, 1, 0],
-            [-1, 0, 0], [-1, 0, 0], [-1, 0, 0], [-1, 0, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0], [1, 0, 0],
-            [0, 0, 1], [0, 0, 1], [0, 0, 1], [0, 0, 1], [0, 0, -1], [0, 0, -1], [0, 0, -1], [0, 0, -1]);
-        // Arrange the vertices into a square shape in texture space too:
-        this.indices.push(0, 1, 2, 1, 3, 2, 4, 5, 6, 5, 7, 6, 8, 9, 10, 9, 11, 10, 12, 13,
-            14, 13, 15, 14, 16, 17, 18, 17, 19, 18, 20, 21, 22, 21, 23, 22);
-    }
-}
+const {Textured_Phong, Cube, Square} = defs
 
-class Floor extends Shape{
-    constructor() {
-        super("position","normal");
-
-        this.arrays.position = Vector3.cast([1, 0, 1], [1, 0, -1], [-1, 0, -1], [-1, 0, 1]);
-        this.arrays.normal = Vector3.cast([0,1,0],[0,1,0],[0,1,0],[0,1,0]);
-        this.indices.push(3,2,1,3,1,0);
-    }
-}
-
+// const Square =
+//     class Square extends tiny.Vertex_Buffer {
+//         constructor() {
+//             super("position", "normal", "texture_coord");
+//             this.arrays.position = [
+//                 vec3(0, 0, 0), vec3(1, 0, 0), vec3(0, 1, 0),
+//                 vec3(1, 1, 0), vec3(1, 0, 0), vec3(0, 1, 0)
+//             ];
+//             this.arrays.normal = [
+//                 vec3(0, 0, 1), vec3(0, 0, 1), vec3(0, 0, 1),
+//                 vec3(0, 0, 1), vec3(0, 0, 1), vec3(0, 0, 1),
+//             ];
+//             this.arrays.texture_coord = [
+//                 vec(0, 0), vec(1, 0), vec(0, 1),
+//                 vec(1, 1), vec(1, 0), vec(0, 1)
+//             ]
+//         }
+//     }
 
 export class MinecraftBuilder extends Scene {
     constructor() {
-        // constructor(): Scenes begin by populating initial values like the Shapes and Materials they'll need.
         super();
         this.hover = this.swarm = false;
-        // At the beginning of our program, load one of each of these shape definitions onto the GPU.
         this.shapes = {
             'cube': new Cube(),
-            'floor': new Floor(),
+            'floor': new Square(),
         };
 
         // *** Materials
         this.materials = {
             plastic: new Material(new defs.Phong_Shader(),
                 {ambient: .4, diffusivity: .6, color: hex_color("#ffffff")}),
+            grass_jpg: new Material(new Textured_Phong(),{
+                color: hex_color("#000000"),
+                ambient: 1,
+                texture: new Texture("assets/grass.jpg", "LINEAR_MIPMAP_LINEAR")
+            }),
         };
         // The white material and basic shader are used for drawing the outline.
         this.white = new Material(new defs.Basic_Shader());
@@ -55,8 +50,8 @@ export class MinecraftBuilder extends Scene {
 
     make_control_panel() {
         // Draw the scene's buttons, setup their actions and keyboard shortcuts, and monitor live measurements.
-        this.key_triggered_button("Delete Base", ["c"], this.set_colors);
-        this.key_triggered_button("Turn House in to Sand", ["s"], this.set_colors);
+       // this.key_triggered_button("Delete Base", ["c"], this.set_colors);
+       // this.key_triggered_button("Turn House in to Sand", ["s"], this.set_colors);
     }
 
 
@@ -73,16 +68,15 @@ export class MinecraftBuilder extends Scene {
         const light_position = vec4(0, 5, 5, 1);
         program_state.lights = [new Light(light_position, color(1, 1, 1, 1), 1000)];
 
-        const blue = hex_color("#1a9ffa");
         let model_transform = Mat4.identity();
-
-        // Example for drawing a cube, you can remove this line if needed
-        this.shapes.cube.draw(context, program_state, model_transform, this.materials.plastic.override({color:blue}));
-        // TODO:  Draw your entire scene here.  Use this.draw_box( graphics_state, model_transform ) to call your helper.
 
 
         let floor_transformation = Mat4.identity();
-        floor_transformation = floor_transformation.times(Mat4.scale(25,0,25));
-        this.shapes.floor.draw(context, program_state,floor_transformation, this.materials.plastic);
+        floor_transformation = floor_transformation.times(Mat4.rotation(Math.PI/2,1,0,0)).times(Mat4.scale(100,100,1));
+        this.shapes.floor.arrays.texture_coord.forEach(
+            (v,i,l) => l[i] = vec(v[0],v[1]).times(100)
+        )
+
+        this.shapes.floor.draw(context, program_state, floor_transformation, this.materials.grass_jpg);
     }
 }
