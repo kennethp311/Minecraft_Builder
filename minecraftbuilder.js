@@ -6,24 +6,6 @@ const {
 
 const {Textured_Phong, Cube, Square} = defs
 
-// const Square =
-//     class Square extends tiny.Vertex_Buffer {
-//         constructor() {
-//             super("position", "normal", "texture_coord");
-//             this.arrays.position = [
-//                 vec3(0, 0, 0), vec3(1, 0, 0), vec3(0, 1, 0),
-//                 vec3(1, 1, 0), vec3(1, 0, 0), vec3(0, 1, 0)
-//             ];
-//             this.arrays.normal = [
-//                 vec3(0, 0, 1), vec3(0, 0, 1), vec3(0, 0, 1),
-//                 vec3(0, 0, 1), vec3(0, 0, 1), vec3(0, 0, 1),
-//             ];
-//             this.arrays.texture_coord = [
-//                 vec(0, 0), vec(1, 0), vec(0, 1),
-//                 vec(1, 1), vec(1, 0), vec(0, 1)
-//             ]
-//         }
-//     }
 
 export class MinecraftBuilder extends Scene {
     constructor() {
@@ -32,6 +14,7 @@ export class MinecraftBuilder extends Scene {
         this.shapes = {
             'cube': new Cube(),
             'floor': new Square(),
+            'sky_sphere': new defs.Subdivision_Sphere(4),
         };
 
         // *** Materials
@@ -42,6 +25,11 @@ export class MinecraftBuilder extends Scene {
                 color: hex_color("#000000"),
                 ambient: 1,
                 texture: new Texture("assets/grass.jpg", "LINEAR_MIPMAP_LINEAR")
+            }),
+            sky_png: new Material(new Textured_Phong(),{
+                color: hex_color("#000000"),
+                ambient: 1,
+                texture: new Texture("assets/sky.png", "LINEAR_MIPMAP_LINEAR")
             }),
             wood: new Material(new Textured_Phong(),{
                 color: hex_color("#000000"),
@@ -91,13 +79,13 @@ export class MinecraftBuilder extends Scene {
         if (!context.scratchpad.controls) {
             this.children.push(context.scratchpad.controls = new defs.Movement_Controls());
             // Define the global camera and projection matrices, which are stored in program_state.
-            program_state.set_camera(Mat4.translation(0, -18, -50));
+            program_state.set_camera(Mat4.translation(0, -15, -40));
         }
         program_state.projection_transform = Mat4.perspective(
             Math.PI / 4, context.width / context.height, 1, 100);
 
         // *** Lights: *** Values of vector or point lights.
-        const light_position = vec4(0, 5, 5, 1);
+        const light_position = vec4(0, 50, 0, 1);
         program_state.lights = [new Light(light_position, color(1, 1, 1, 1), 1000)];
 
         const t = program_state.animation_time / 1000, dt = program_state.animation_delta_time / 1000;
@@ -729,5 +717,11 @@ export class MinecraftBuilder extends Scene {
         )
 
         this.shapes.floor.draw(context, program_state, floor_transformation, this.materials.grass_jpg);
+
+        let sky_transform = Mat4.identity();
+        sky_transform = sky_transform.times(Mat4.translation(0,10,0)).times(Mat4.scale(50,50,50));
+        this.shapes.sky_sphere.draw(context,program_state,sky_transform,this.materials.sky_png);
+
+
     }
 }
