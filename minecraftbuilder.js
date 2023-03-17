@@ -320,102 +320,102 @@ export class MinecraftBuilder extends Scene {
         this.layers_z[3][12] = 0;
         this.layers_z[3][13] = 0;
         this.layers_z[3][14] = 0;
-        this.layers_x[4][0] = -6;
-        this.layers_x[4][1] = 6;
-        this.layers_x[4][2] = -6;
-        this.layers_x[4][3] = 6;
-        this.layers_z[4][0] = 0;
-        this.layers_z[4][1] = 0;
-        this.layers_z[4][2] = -12;
-        this.layers_z[4][3] = -12;
-        this.layers_x[4][4] = -4;
-        this.layers_x[4][5] = 4;
-        this.layers_x[4][6] = 4;
-        this.layers_x[4][7] = -4;
-        this.layers_z[4][4] = 0;
-        this.layers_z[4][5] = 0;
-        this.layers_z[4][6] = -12;
-        this.layers_z[4][7] = -12;
-        this.layers_x[4][8] = 6;
-        this.layers_x[4][9] = -6;
-        this.layers_x[4][10] = 6;
-        this.layers_x[4][11] = -6;
-        this.layers_z[4][8] = -10;
-        this.layers_z[4][9] = -10;
-        this.layers_z[4][10] = -2;
-        this.layers_z[4][11] = -2;
-        this.layers_x[4][12] = -2;
-        this.layers_x[4][13] = 2;
-        this.layers_x[4][14] = 2;
-        this.layers_x[4][15] = -2;
-        this.layers_z[4][12] = 0;
-        this.layers_z[4][13] = 0;
-        this.layers_z[4][14] = -12;
-        this.layers_z[4][15] = -12;
-        this.layers_x[4][16] = 6;
-        this.layers_x[4][17] = -6;
-        this.layers_x[4][18] = 6;
-        this.layers_x[4][19] = -6;
-        this.layers_z[4][16] = -8;
-        this.layers_z[4][17] = -8;
-        this.layers_z[4][18] = -4;
-        this.layers_z[4][19] = -4;
-        this.layers_x[4][20] = 0;
-        this.layers_x[4][21] = 0;
-        this.layers_x[4][22] = 6;
-        this.layers_x[4][23] = -6;
-        this.layers_z[4][20] = 0;
-        this.layers_z[4][21] = -12;
-        this.layers_z[4][22] = -6;
-        this.layers_z[4][23] = -6;
-        this.layers_x[4][24] = 0;
-        this.layers_x[4][25] = 0;
-        this.layers_x[4][26] = 6;
-        this.layers_x[4][27] = -6;
-        this.layers_z[4][24] = 0;
-        this.layers_z[4][25] = -12;
-        this.layers_z[4][26] = -6;
-        this.layers_z[4][27] = -6;
-        this.layers_x[4][28] = -4;
-        this.layers_x[4][29] = 4;
-        this.layers_x[4][30] = -2;
-        this.layers_x[4][31] = 2;
-        this.layers_x[4][32] = 0;
-        this.layers_z[4][28] = -8;
-        this.layers_z[4][29] = -8;
-        this.layers_z[4][30] = -8;
-        this.layers_z[4][31] = -8;
-        this.layers_z[4][32] = -8;
-        this.layers_x[4][33] = -4;
-        this.layers_x[4][34] = 4;
-        this.layers_x[4][35] = -2;
-        this.layers_x[4][36] = 2;
-        this.layers_x[4][37] = 0;
-        this.layers_z[4][33] = -6;
-        this.layers_z[4][34] = -6;
-        this.layers_z[4][35] = -6;
-        this.layers_z[4][36] = -6;
-        this.layers_z[4][37] = -6;
-        this.layers_x[4][38] = -4;
-        this.layers_x[4][39] = 4;
-        this.layers_x[4][40] = -2;
-        this.layers_x[4][41] = 2;
-        this.layers_x[4][42] = 0;
-        this.layers_z[4][38] = -4;
-        this.layers_z[4][39] = -4;
-        this.layers_z[4][40] = -4;
-        this.layers_z[4][41] = -4;
-        this.layers_z[4][42] = -4;
-        this.layers_x[4][43] = -4;
-        this.layers_x[4][44] = 4;
-        this.layers_x[4][45] = -2;
-        this.layers_x[4][46] = 2;
-        this.layers_x[4][47] = 0;
-        this.layers_z[4][43] = -2;
-        this.layers_z[4][44] = -2;
-        this.layers_z[4][45] = -2;
-        this.layers_z[4][46] = -2;
-        this.layers_z[4][47] = -2;
+        // this.layers_x[4][0] = -6;
+        // this.layers_x[4][1] = 6;
+        // this.layers_x[4][2] = -6;
+        // this.layers_x[4][3] = 6;
+        // this.layers_z[4][0] = 0;
+        // this.layers_z[4][1] = 0;
+        // this.layers_z[4][2] = -12;
+        // this.layers_z[4][3] = -12;
+        // this.layers_x[4][4] = -4;
+        // this.layers_x[4][5] = 4;
+        // this.layers_x[4][6] = 4;
+        // this.layers_x[4][7] = -4;
+        // this.layers_z[4][4] = 0;
+        // this.layers_z[4][5] = 0;
+        // this.layers_z[4][6] = -12;
+        // this.layers_z[4][7] = -12;
+        // this.layers_x[4][8] = 6;
+        // this.layers_x[4][9] = -6;
+        // this.layers_x[4][10] = 6;
+        // this.layers_x[4][11] = -6;
+        // this.layers_z[4][8] = -10;
+        // this.layers_z[4][9] = -10;
+        // this.layers_z[4][10] = -2;
+        // this.layers_z[4][11] = -2;
+        // this.layers_x[4][12] = -2;
+        // this.layers_x[4][13] = 2;
+        // this.layers_x[4][14] = 2;
+        // this.layers_x[4][15] = -2;
+        // this.layers_z[4][12] = 0;
+        // this.layers_z[4][13] = 0;
+        // this.layers_z[4][14] = -12;
+        // this.layers_z[4][15] = -12;
+        // this.layers_x[4][16] = 6;
+        // this.layers_x[4][17] = -6;
+        // this.layers_x[4][18] = 6;
+        // this.layers_x[4][19] = -6;
+        // this.layers_z[4][16] = -8;
+        // this.layers_z[4][17] = -8;
+        // this.layers_z[4][18] = -4;
+        // this.layers_z[4][19] = -4;
+        // this.layers_x[4][20] = 0;
+        // this.layers_x[4][21] = 0;
+        // this.layers_x[4][22] = 6;
+        // this.layers_x[4][23] = -6;
+        // this.layers_z[4][20] = 0;
+        // this.layers_z[4][21] = -12;
+        // this.layers_z[4][22] = -6;
+        // this.layers_z[4][23] = -6;
+        // this.layers_x[4][24] = 0;
+        // this.layers_x[4][25] = 0;
+        // this.layers_x[4][26] = 6;
+        // this.layers_x[4][27] = -6;
+        // this.layers_z[4][24] = 0;
+        // this.layers_z[4][25] = -12;
+        // this.layers_z[4][26] = -6;
+        // this.layers_z[4][27] = -6;
+        // this.layers_x[4][28] = -4;
+        // this.layers_x[4][29] = 4;
+        // this.layers_x[4][30] = -2;
+        // this.layers_x[4][31] = 2;
+        // this.layers_x[4][32] = 0;
+        // this.layers_z[4][28] = -8;
+        // this.layers_z[4][29] = -8;
+        // this.layers_z[4][30] = -8;
+        // this.layers_z[4][31] = -8;
+        // this.layers_z[4][32] = -8;
+        // this.layers_x[4][33] = -4;
+        // this.layers_x[4][34] = 4;
+        // this.layers_x[4][35] = -2;
+        // this.layers_x[4][36] = 2;
+        // this.layers_x[4][37] = 0;
+        // this.layers_z[4][33] = -6;
+        // this.layers_z[4][34] = -6;
+        // this.layers_z[4][35] = -6;
+        // this.layers_z[4][36] = -6;
+        // this.layers_z[4][37] = -6;
+        // this.layers_x[4][38] = -4;
+        // this.layers_x[4][39] = 4;
+        // this.layers_x[4][40] = -2;
+        // this.layers_x[4][41] = 2;
+        // this.layers_x[4][42] = 0;
+        // this.layers_z[4][38] = -4;
+        // this.layers_z[4][39] = -4;
+        // this.layers_z[4][40] = -4;
+        // this.layers_z[4][41] = -4;
+        // this.layers_z[4][42] = -4;
+        // this.layers_x[4][43] = -4;
+        // this.layers_x[4][44] = 4;
+        // this.layers_x[4][45] = -2;
+        // this.layers_x[4][46] = 2;
+        // this.layers_x[4][47] = 0;
+        // this.layers_z[4][43] = -2;
+        // this.layers_z[4][44] = -2;
+        // this.layers_z[4][45] = -2;
+        // this.layers_z[4][46] = -2;
+        // this.layers_z[4][47] = -2;
         this.layers_x[5][0] = -4;
         this.layers_x[5][1] = 4;
         this.layers_x[5][2] = -4;
@@ -652,8 +652,8 @@ export class MinecraftBuilder extends Scene {
                 let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], this.floor_y + 7.5, this.layers_z[3][i]));
                 this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
             }
-            for (let i = 0; i < 48; i++){
-                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[4][i], this.floor_y + 10, this.layers_z[4][i]));
+            for (let i = 0; i < 15; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], this.floor_y + 10, this.layers_z[3][i]));
                 this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
             }
             for(let i = 0; i < 16; i++){
@@ -697,8 +697,8 @@ export class MinecraftBuilder extends Scene {
                 let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], this.floor_y + 7.5, this.layers_z[3][i]));
                 this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
             }
-            for (let i = 0; i < 48; i++){
-                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[4][i], this.floor_y + 10, this.layers_z[4][i]));
+            for (let i = 0; i < 15; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], this.floor_y + 10, this.layers_z[3][i]));
                 this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
             }
             for(let i = 0; i < 16; i++){
@@ -748,8 +748,8 @@ export class MinecraftBuilder extends Scene {
                 let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], this.floor_y + 7.5, this.layers_z[3][i]));
                 this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
             }
-            for (let i = 0; i < 48; i++) {
-                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[4][i], this.floor_y + 10, this.layers_z[4][i]));
+            for (let i = 0; i < 15; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], this.floor_y + 10, this.layers_z[3][i]));
                 this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
             }
             for (let i = 0; i < 16; i++) {
@@ -811,16 +811,8 @@ export class MinecraftBuilder extends Scene {
             else{
                 temp = this.floor_y + 10;
             }
-            for (let i = 0; i < 48; i++){
-                if(i < 25){
-                    if(this.floor_y + 10 < 9){
-                        temp = 9;
-                    }
-                    else{
-                        temp = this.floor_y + 10;
-                    }
-                }
-                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[4][i], temp, this.layers_z[4][i]));
+            for (let i = 0; i < 15; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], this.floor_y + 10, this.layers_z[3][i]));
                 this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
             }
             if(this.floor_y + 12.5 < 3){
@@ -1365,8 +1357,8 @@ export class MinecraftBuilder extends Scene {
                 let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], 15, this.layers_z[3][i]));
                 this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
             }
-            for (let i = 0; i < 48; i++){
-                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[4][i], 17, this.layers_z[4][i]));
+            for (let i = 0; i < 15; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], 17, this.layers_z[3][i]));
                 this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
             }
 
