@@ -1048,7 +1048,7 @@ export class MinecraftBuilder extends Scene {
                         this.shapes.cube.draw(context, program_state, house_floor_transform[i], this.materials.stone);
                 }
 
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 9.0)
                 {
                     house_floor_transform.push(Mat4.identity().times(Mat4.translation(-4, 9, -10, 0)));
                     house_floor_transform.push(Mat4.identity().times(Mat4.translation(4, 9, -10, 0)));
@@ -1058,7 +1058,7 @@ export class MinecraftBuilder extends Scene {
                     for (let i = 24; i < 29; i++)
                         this.shapes.cube.draw(context, program_state, house_floor_transform[i], this.materials.stone);
                 }
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 10.0)
                 {
                     house_floor_transform.push(Mat4.identity().times(Mat4.translation(-4, 9, -8, 0)));
                     house_floor_transform.push(Mat4.identity().times(Mat4.translation(4, 9, -8, 0)));
@@ -1069,7 +1069,7 @@ export class MinecraftBuilder extends Scene {
                         this.shapes.cube.draw(context, program_state, house_floor_transform[i], this.materials.stone);
                 }
 
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 11.0)
                 {
                     house_floor_transform.push(Mat4.identity().times(Mat4.translation(-4, 9, -6, 0)));
                     house_floor_transform.push(Mat4.identity().times(Mat4.translation(4, 9, -6, 0)));
@@ -1080,7 +1080,7 @@ export class MinecraftBuilder extends Scene {
                         this.shapes.cube.draw(context, program_state, house_floor_transform[i], this.materials.stone);
                 }
 
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 12.0)
                 {
                     house_floor_transform.push(Mat4.identity().times(Mat4.translation(-4, 9, -4, 0)));
                     house_floor_transform.push(Mat4.identity().times(Mat4.translation(4, 9, -4, 0)));
@@ -1091,7 +1091,7 @@ export class MinecraftBuilder extends Scene {
                         this.shapes.cube.draw(context, program_state, house_floor_transform[i], this.materials.stone);
                 }
 
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 13.0)
                 {
                     house_floor_transform.push(Mat4.identity().times(Mat4.translation(-4, 9, -2, 0)));
                     house_floor_transform.push(Mat4.identity().times(Mat4.translation(4, 9, -2, 0)));
@@ -1103,7 +1103,7 @@ export class MinecraftBuilder extends Scene {
                 }
             }
 
-            if (Math.floor(t) > 8.0)
+            if (Math.floor(t) > 14.0)
             {
                 let house_wall_transform = [Mat4.identity().times(Mat4.translation(-6, 11, 0, 0)),
                                             Mat4.identity().times(Mat4.translation(6, 11, 0, 0)),
@@ -1113,7 +1113,7 @@ export class MinecraftBuilder extends Scene {
                 for (let i = 0; i < 4; i++)
                     this.shapes.cube.draw(context, program_state, house_wall_transform[i], this.materials.stonebrick);
 
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 15.0)
                 {
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(-4, 11, 0, 0)));
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(4, 11, 0, 0)));
@@ -1128,7 +1128,7 @@ export class MinecraftBuilder extends Scene {
                         this.shapes.cube.draw(context, program_state, house_wall_transform[i], this.materials.stonebrick);
                 }
 
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 16.0)
                 {
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(-2, 11, 0, 0)));
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(2, 11, 0, 0)));
@@ -1143,7 +1143,7 @@ export class MinecraftBuilder extends Scene {
                     for (let i = 12; i < 20; i++)
                         this.shapes.cube.draw(context, program_state, house_wall_transform[i], this.materials.stonebrick);
                 }
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 17.0)
                 {
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(0, 11, -12, 0)));
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(-6, 11, -6, 0)));
@@ -1153,7 +1153,7 @@ export class MinecraftBuilder extends Scene {
                 }
 
                 let y_wall = 13;
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 18.0)
                 {
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(-6, y_wall, 0, 0)));
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(6, y_wall, 0, 0)));
@@ -1162,7 +1162,7 @@ export class MinecraftBuilder extends Scene {
                     for (let i = 23; i < 27; i++)
                         this.shapes.cube.draw(context, program_state, house_wall_transform[i], this.materials.stonebrick);
                 }
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 19.0)
                 {
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(-4, y_wall, 0, 0)));
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(4, y_wall, 0, 0)));
@@ -1176,7 +1176,7 @@ export class MinecraftBuilder extends Scene {
                     for (let i = 27; i < 35; i++)
                         this.shapes.cube.draw(context, program_state, house_wall_transform[i], this.materials.stonebrick);
                 }
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 20.0)
                 {
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(-2, y_wall, 0, 0)));
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(2, y_wall, 0, 0)));
@@ -1184,7 +1184,7 @@ export class MinecraftBuilder extends Scene {
                     for (let i = 35; i < 37; i++)
                         this.shapes.cube.draw(context, program_state, house_wall_transform[i], this.materials.stonebrick);
                 }
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 21.0)
                 {
                     y_wall = y_wall + 2;
 
@@ -1195,7 +1195,7 @@ export class MinecraftBuilder extends Scene {
                     for (let i = 37; i < 41; i++)
                         this.shapes.cube.draw(context, program_state, house_wall_transform[i], this.materials.stonebrick);
                 }
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 22.0)
                 {
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(-4, y_wall, 0, 0)));
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(4, y_wall, 0, 0)));
@@ -1209,7 +1209,7 @@ export class MinecraftBuilder extends Scene {
                     for (let i = 41; i < 49; i++)
                         this.shapes.cube.draw(context, program_state, house_wall_transform[i], this.materials.stonebrick);
                 }
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 23.0)
                 {
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(-2, y_wall, 0, 0)));
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(2, y_wall, 0, 0)));
@@ -1217,12 +1217,12 @@ export class MinecraftBuilder extends Scene {
                     for (let i = 49; i < 51; i++)
                         this.shapes.cube.draw(context, program_state, house_wall_transform[i], this.materials.stonebrick);
                 }
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 24.0)
                 {
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(0, y_wall, 0, 0)));
                     this.shapes.cube.draw(context, program_state, house_wall_transform[51], this.materials.stonebrick);
                 }
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 25.0)
                 {
                     y_wall = y_wall + 2;
 
@@ -1233,7 +1233,7 @@ export class MinecraftBuilder extends Scene {
                     for (let i = 52; i < 56; i++)
                         this.shapes.cube.draw(context, program_state, house_wall_transform[i], this.materials.stonebrick);
                 }
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 26.0)
                 {
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(-4, y_wall, 0, 0)));
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(4, y_wall, 0, 0)));
@@ -1247,7 +1247,7 @@ export class MinecraftBuilder extends Scene {
                     for (let i = 56; i < 64; i++)
                         this.shapes.cube.draw(context, program_state, house_wall_transform[i], this.materials.stonebrick);
                 }
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 27.0)
                 {
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(-2, y_wall, 0, 0)));
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(2, y_wall, 0, 0)));
@@ -1261,7 +1261,7 @@ export class MinecraftBuilder extends Scene {
                     for (let i = 64; i < 72; i++)
                         this.shapes.cube.draw(context, program_state, house_wall_transform[i], this.materials.stonebrick);
                 }
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 28.0)
                 {
 
                     house_wall_transform.push(Mat4.identity().times(Mat4.translation(0, y_wall, 0, 0)));
@@ -1273,7 +1273,7 @@ export class MinecraftBuilder extends Scene {
                 }
 
             }
-            if (Math.floor(t) > 8.0)
+            if (Math.floor(t) > 29.0)
             {
                 let y_roof = 19;
                 let house_roof_transform = [Mat4.identity().times(Mat4.translation(-4, y_roof, -2, 0)),
@@ -1285,7 +1285,7 @@ export class MinecraftBuilder extends Scene {
                     this.shapes.cube.draw(context, program_state, house_roof_transform[i], this.materials.redbrick);
 
 
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 30.0)
                 {
                     house_roof_transform.push(Mat4.identity().times(Mat4.translation(-2, y_roof, -2, 0)));
                     house_roof_transform.push(Mat4.identity().times(Mat4.translation(2, y_roof, -2, 0)));
@@ -1301,7 +1301,7 @@ export class MinecraftBuilder extends Scene {
                         this.shapes.cube.draw(context, program_state, house_roof_transform[i], this.materials.redbrick);
 
                 }
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 31.0)
                 {
                     house_roof_transform.push(Mat4.identity().times(Mat4.translation(0, y_roof, -2, 0)));
                     house_roof_transform.push(Mat4.identity().times(Mat4.translation(0, y_roof, -10, 0)));
@@ -1311,7 +1311,7 @@ export class MinecraftBuilder extends Scene {
                     for (let i = 12; i < 16; i++)
                         this.shapes.cube.draw(context, program_state, house_roof_transform[i], this.materials.redbrick);
                 }
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 32.0)
                 {
                     y_roof = y_roof + 2;
                     house_roof_transform.push(Mat4.identity().times(Mat4.translation(-2, y_roof, -4, 0)));
@@ -1323,7 +1323,7 @@ export class MinecraftBuilder extends Scene {
                         this.shapes.cube.draw(context, program_state, house_roof_transform[i], this.materials.redbrick);
                 }
 
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 33.0)
                 {
                     house_roof_transform.push(Mat4.identity().times(Mat4.translation(0, y_roof, -4, 0)));
                     house_roof_transform.push(Mat4.identity().times(Mat4.translation(0, y_roof, -8, 0)));
@@ -1333,7 +1333,7 @@ export class MinecraftBuilder extends Scene {
                     for (let i = 20; i < 24; i++)
                         this.shapes.cube.draw(context, program_state, house_roof_transform[i], this.materials.redbrick);
                 }
-                if (Math.floor(t) > 8.0)
+                if (Math.floor(t) > 34.0)
                 {
                     y_roof = y_roof + 2;
                     house_roof_transform.push(Mat4.identity().times(Mat4.translation(0, y_roof, -6, 0)));
