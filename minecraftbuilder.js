@@ -918,6 +918,374 @@ export class MinecraftBuilder extends Scene {
 
     }
 
+    sand_falling_with_pillars(context, program_state){
+        if(this.layer == 0){
+            for (let i = 0; i < 47; i++) {
+                this.house_floor_transform[i] = Mat4.identity().times(Mat4.translation(this.layers_x[0][i], this.floor_y, this.layers_z[0][i], 0));
+                this.shapes.cube.draw(context, program_state, this.house_floor_transform[i], this.materials.sand);
+            }
+            for(let i = 0; i < 19; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[1][i], 11, this.layers_z[1][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 14; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[2][i], 13, this.layers_z[2][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 15; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], 15, this.layers_z[3][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 48; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[4][i], 17, this.layers_z[4][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+
+            for(let i = 0; i < 16; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[5][i], 19, this.layers_z[5][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for(let i = 0; i < 8; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[6][i], 21, this.layers_z[6][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[7][0], 23, this.layers_z[7][0]));
+            this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+
+        }
+        if(this.layer == 1){
+            for (let i = 0; i < 47; i++) {
+                this.house_floor_transform[i] = Mat4.identity().times(Mat4.translation(this.layers_x[0][i], this.floor_y, this.layers_z[0][i], 0));
+                this.shapes.cube.draw(context, program_state, this.house_floor_transform[i], this.materials.sand);
+            }
+            for(let i = 0; i < 19; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[1][i], this.floor_y +2.5, this.layers_z[1][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 14; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[2][i], 13, this.layers_z[2][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 15; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], 15, this.layers_z[3][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 48; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[4][i], 17, this.layers_z[4][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+
+            for(let i = 0; i < 16; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[5][i], 19, this.layers_z[5][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for(let i = 0; i < 8; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[6][i], 21, this.layers_z[6][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            let temp_trans1 = Mat4.identity().times(Mat4.translation(this.layers_x[7][0], 23, this.layers_z[7][0]));
+            this.shapes.cube.draw(context, program_state, temp_trans1, this.materials.sand);
+
+        }
+
+        if(this.layer == 2){
+            for (let i = 0; i < 47; i++) {
+                this.house_floor_transform[i] = Mat4.identity().times(Mat4.translation(this.layers_x[0][i], this.floor_y, this.layers_z[0][i], 0));
+                this.shapes.cube.draw(context, program_state, this.house_floor_transform[i], this.materials.sand);
+            }
+            for(let i = 0; i < 19; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[1][i], this.floor_y + 2.5, this.layers_z[1][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 14; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[2][i], this.floor_y + 5, this.layers_z[2][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 15; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], 15, this.layers_z[3][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 48; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[4][i], 17, this.layers_z[4][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+
+            for(let i = 0; i < 16; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[5][i], 19, this.layers_z[5][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for(let i = 0; i < 8; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[6][i], 21, this.layers_z[6][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            let temp_trans1 = Mat4.identity().times(Mat4.translation(this.layers_x[7][0], 23, this.layers_z[7][0]));
+            this.shapes.cube.draw(context, program_state, temp_trans1, this.materials.sand);
+
+        }
+        if(this.layer == 3){
+            let temp = 0;
+            if(this.floor_y < 1){
+                temp = 1;
+            }
+            else{
+                temp = this.floor_y;
+            }
+            for (let i = 0; i < 47; i++) {
+                this.house_floor_transform[i] = Mat4.identity().times(Mat4.translation(this.layers_x[0][i], this.floor_y, this.layers_z[0][i], 0));
+                this.shapes.cube.draw(context, program_state, this.house_floor_transform[i], this.materials.sand);
+            }
+            for(let i = 0; i < 19; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[1][i], this.floor_y + 2.5, this.layers_z[1][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 14; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[2][i], this.floor_y + 5, this.layers_z[2][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 15; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], this.floor_y + 7.5, this.layers_z[3][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 48; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[4][i], 17, this.layers_z[4][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+
+            for(let i = 0; i < 16; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[5][i], 19, this.layers_z[5][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for(let i = 0; i < 8; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[6][i], 21, this.layers_z[6][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            let temp_trans1 = Mat4.identity().times(Mat4.translation(this.layers_x[7][0], 23, this.layers_z[7][0]));
+            this.shapes.cube.draw(context, program_state, temp_trans1, this.materials.sand);
+        }
+        if(this.layer == 4){
+            let temp = 0;
+            if(this.floor_y < 1){
+                temp = 1;
+            }
+            else{
+                temp = this.floor_y;
+            }
+            for (let i = 0; i < 47; i++) {
+                this.house_floor_transform[i] = Mat4.identity().times(Mat4.translation(this.layers_x[0][i], temp, this.layers_z[0][i], 0));
+                this.shapes.cube.draw(context, program_state, this.house_floor_transform[i], this.materials.sand);
+            }
+            for(let i = 0; i < 19; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[1][i], this.floor_y + 2.5, this.layers_z[1][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 14; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[2][i], this.floor_y + 5, this.layers_z[2][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 15; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], this.floor_y + 7.5, this.layers_z[3][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 15; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], this.floor_y + 10, this.layers_z[3][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for(let i = 0; i < 16; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[5][i], 19, this.layers_z[5][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for(let i = 0; i < 8; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[6][i], 21, this.layers_z[6][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            let temp_trans1 = Mat4.identity().times(Mat4.translation(this.layers_x[7][0], 23, this.layers_z[7][0]));
+            this.shapes.cube.draw(context, program_state, temp_trans1, this.materials.sand);
+        }
+        if(this.layer == 5){
+            let temp = 0;
+            if(this.floor_y < 1){
+                temp = 1;
+            }
+            else{
+                temp = this.floor_y;
+            }
+            for (let i = 0; i < 47; i++) {
+                this.house_floor_transform[i] = Mat4.identity().times(Mat4.translation(this.layers_x[0][i], temp, this.layers_z[0][i], 0));
+                this.shapes.cube.draw(context, program_state, this.house_floor_transform[i], this.materials.sand);
+            }
+            if(this.floor_y + 2.5 < 3){
+                temp = 3;
+            }
+            else{
+                temp = this.floor_y + 2.5;
+            }
+            for(let i = 0; i < 19; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[1][i], temp, this.layers_z[1][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 14; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[2][i], this.floor_y + 5, this.layers_z[2][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 15; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], this.floor_y + 7.5, this.layers_z[3][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 15; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], this.floor_y + 10, this.layers_z[3][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for(let i = 0; i < 16; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[5][i], this.floor_y+12.5, this.layers_z[5][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for(let i = 0; i < 8; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[6][i], 21, this.layers_z[6][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            let temp_trans1 = Mat4.identity().times(Mat4.translation(this.layers_x[7][0], 23, this.layers_z[7][0]));
+            this.shapes.cube.draw(context, program_state, temp_trans1, this.materials.sand);
+        }
+        if(this.layer == 6) {
+            let temp = 0;
+            if(this.floor_y < 1){
+                temp = 1;
+            }
+            else{
+                temp = this.floor_y;
+            }
+            for (let i = 0; i < 47; i++) {
+                this.house_floor_transform[i] = Mat4.identity().times(Mat4.translation(this.layers_x[0][i], temp, this.layers_z[0][i], 0));
+                this.shapes.cube.draw(context, program_state, this.house_floor_transform[i], this.materials.sand);
+            }
+            if(this.floor_y + 2.5 < 3){
+                temp = 3;
+            }
+            else{
+                temp = this.floor_y + 2.5;
+            }
+            for (let i = 0; i < 19; i++) {
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[1][i], temp, this.layers_z[1][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            if(this.floor_y + 5 < 5){
+                temp = 5;
+            }
+            else{
+                temp = this.floor_y + 5;
+            }
+            for (let i = 0; i < 14; i++) {
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[2][i], temp, this.layers_z[2][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 15; i++) {
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], this.floor_y + 7.5, this.layers_z[3][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 15; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], this.floor_y + 10, this.layers_z[3][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 16; i++) {
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[5][i], this.floor_y+12.5, this.layers_z[5][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            for (let i = 0; i < 8; i++) {
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[6][i], this.floor_y+15, this.layers_z[6][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            let temp_trans1 = Mat4.identity().times(Mat4.translation(this.layers_x[7][0], 23, this.layers_z[7][0]));
+            this.shapes.cube.draw(context, program_state, temp_trans1, this.materials.sand);
+        }
+        if(this.layer == 7){
+            let temp = 0;
+            if(this.floor_y < 1){
+                temp = 1;
+            }
+            else{
+                temp = this.floor_y;
+            }
+            for (let i = 0; i < 47; i++) {
+                this.house_floor_transform[i] = Mat4.identity().times(Mat4.translation(this.layers_x[0][i], temp, this.layers_z[0][i], 0));
+                this.shapes.cube.draw(context, program_state, this.house_floor_transform[i], this.materials.sand);
+            }
+            if(this.floor_y + 2.5 < 3){
+                temp = 3;
+            }
+            else{
+                temp = this.floor_y + 2.5;
+            }
+            for(let i = 0; i < 19; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[1][i], temp, this.layers_z[1][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            if(this.floor_y + 5 < 5){
+                temp = 5;
+            }
+            else{
+                temp = this.floor_y + 5;
+            }
+            for (let i = 0; i < 14; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[2][i], temp, this.layers_z[2][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            if(this.floor_y + 7.5 < 7){
+                temp = 7;
+            }
+            else{
+                temp = this.floor_y + 7.5;
+            }
+            for (let i = 0; i < 15; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], temp, this.layers_z[3][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            if(this.floor_y + 10 < 1){
+                temp = 1;
+            }
+            else{
+                temp = this.floor_y + 10;
+            }
+            for (let i = 0; i < 15; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], this.floor_y + 10, this.layers_z[3][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            if(this.floor_y + 12.5 < 3){
+                temp = 3;
+            }
+            else{
+                temp = this.floor_y + 12.5;
+            }
+            for(let i = 0; i < 16; i++){
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[5][i], temp, this.layers_z[5][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            if(this.floor_y + 15 < 5){
+                temp = 5;
+            }
+            else{
+                temp = this.floor_y + 15;
+            }
+            for(let i = 0; i < 8; i++) {
+                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[6][i], temp, this.layers_z[6][i]));
+                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            }
+            if(this.floor_y + 17.5 < 7){
+                temp = 7;
+            }
+            else{
+                temp = this.floor_y + 17.5;
+            }
+            let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[7][0], temp, this.layers_z[7][0]));
+            this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+        }
+
+
+
+    }
+
+
+
+
     display(context, program_state) {
         if (!context.scratchpad.controls) {
             this.children.push(context.scratchpad.controls = new defs.Movement_Controls());
@@ -1340,44 +1708,23 @@ export class MinecraftBuilder extends Scene {
         if (this.sand_house && !this.fall)
         {
 
-            for (let i = 0; i < 47; i++) { //maybe 49
-                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[0][i], 9, this.layers_z[0][i]));
-                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
-            }
+            this.sand_falling_with_pillars(context,program_state);
+            this.floor_y = this.floor_y-0.1;
 
-            for(let i = 0; i < 19; i++){
-                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[1][i], 11, this.layers_z[1][i]));
-                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
-            }
-            for (let i = 0; i < 14; i++){
-                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[2][i], 13, this.layers_z[2][i]));
-                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
-            }
-            for (let i = 0; i < 15; i++){
-                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], 15, this.layers_z[3][i]));
-                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
-            }
-            for (let i = 0; i < 15; i++){
-                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[3][i], 17, this.layers_z[3][i]));
-                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
-            }
 
-            for(let i = 0; i < 16; i++){
-                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[5][i], 19, this.layers_z[5][i]));
-                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            if(this.counter > 4){
+                if(this.layer < 7){
+                    this.layer = this.layer + 1;
+                }
+                this.counter = 0;
             }
-            for(let i = 0; i < 8; i++){
-                let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[6][i], 21, this.layers_z[6][i]));
-                this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
-            }
-
-            let temp_trans = Mat4.identity().times(Mat4.translation(this.layers_x[7][0], 23, this.layers_z[7][0]));
-            this.shapes.cube.draw(context, program_state, temp_trans, this.materials.sand);
+            this.counter = this.counter + 1;
 
 
             if(!this.pillar_exist){
                 this.fall = true;
             }
+
 
 
         }
