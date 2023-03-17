@@ -59,6 +59,16 @@ export class MinecraftBuilder extends Scene {
                 ambient: 1,
                 texture: new Texture("assets/minecraft_sand.png", "LINEAR_MIPMAP_LINEAR")
             }),
+            tree: new Material(new Textured_Phong(),{
+                color: hex_color("#000000"),
+                ambient: 1,
+                texture: new Texture("assets/tree.png", "LINEAR_MIPMAP_LINEAR")
+            }),
+            leaf: new Material(new Textured_Phong(),{
+                color: hex_color("#000000"),
+                ambient: 1,
+                texture: new Texture("assets/leaf.png", "LINEAR_MIPMAP_LINEAR")
+            }),
         };
         // The white material and basic shader are used for drawing the outline.
         this.white = new Material(new defs.Basic_Shader());
@@ -848,6 +858,74 @@ export class MinecraftBuilder extends Scene {
     }
 
 
+    tree_drawer(x, z, context, program_state){
+        let tree_transform = Mat4.identity();
+        tree_transform = tree_transform.times(Mat4.translation(x,1,z));
+        this.shapes.cube.draw(context,program_state, tree_transform, this.materials.tree);
+        tree_transform = tree_transform.times(Mat4.translation(0,2,0));
+        this.shapes.cube.draw(context,program_state, tree_transform, this.materials.tree);
+        tree_transform = tree_transform.times(Mat4.translation(0,2,0));
+        this.shapes.cube.draw(context,program_state, tree_transform, this.materials.tree);
+        tree_transform = tree_transform.times(Mat4.translation(0,2,0));
+        this.shapes.cube.draw(context,program_state, tree_transform, this.materials.tree); //drawn at y = 7
+        tree_transform = tree_transform.times(Mat4.translation(0,2,0));
+        this.shapes.cube.draw(context,program_state, tree_transform, this.materials.leaf);
+        tree_transform = tree_transform.times(Mat4.translation(0,2,0));
+        this.shapes.cube.draw(context,program_state, tree_transform, this.materials.leaf);
+        tree_transform = tree_transform.times(Mat4.translation(0,2,0));
+        this.shapes.cube.draw(context,program_state, tree_transform, this.materials.leaf);
+        let temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(2,0,0));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(4,0,0));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(-2,0,0));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(-4,0,0));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(0,0,2));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(0,0,4));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(0,0,-2));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(0,0,-4));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(-2,0,-2));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(2,0,-2));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(2,0,2));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(-2,0,2));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(-2,2,-2));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(2,2,-2));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(2,2,2));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(-2,2,2));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(2,-2,-2));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(2,-2,2));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(-2,-2,2));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(-2,-2,-2));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(2,-2,0));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(-2,-2,0));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(0,-2,2));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+        temp_trans = Mat4.identity().times(Mat4.translation(x,9,z)).times(Mat4.translation(0,-2,-2));
+        this.shapes.cube.draw(context,program_state, temp_trans, this.materials.leaf);
+
+    }
+
     display(context, program_state) {
         if (!context.scratchpad.controls) {
             this.children.push(context.scratchpad.controls = new defs.Movement_Controls());
@@ -1345,6 +1423,17 @@ export class MinecraftBuilder extends Scene {
         let sky_transform = Mat4.identity();
         sky_transform = sky_transform.times(Mat4.translation(0,10,0)).times(Mat4.scale(100,100,100));
         this.shapes.sky_sphere.draw(context,program_state,sky_transform,this.materials.sky_png);
+
+
+        this.tree_drawer(40,-10, context,program_state);
+        this.tree_drawer(-40,-10, context,program_state);
+        this.tree_drawer(0,-40, context,program_state);
+        this.tree_drawer(20,-35,context,program_state);
+        this.tree_drawer(-20,-35, context,program_state);
+        this.tree_drawer(-23,-5, context,program_state);
+
+
+
 
 
     }
